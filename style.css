@@ -1,0 +1,150 @@
+html, body{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+}
+
+.grass, .sky, .road{
+    position: relative;
+}
+
+.sky{
+    height: 40%;
+    background: skyblue;
+    display: flex;
+    justify-content: space-around;
+}
+
+.grass{
+    height: 30%;
+    background: seagreen;
+}
+
+.road{
+    height: 30%;
+    background: dimgray;
+    box-sizing: border-box;
+    border-top: 10px solid grey;
+    border-bottom: 10px solid grey;
+    width: 100%;
+}
+
+.lines{
+    border: dashed white 2px;
+   margin-top: 125px;
+}
+.buttonOne {
+    background-image: url('https://media.tenor.com/YVkw6MJvQbwAAAAM/sticker-cute.gif');
+    background-size: cover;
+    width: 100px;
+    height: 90px;
+    margin-left: 0%;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: rgb(18, 66, 157);
+    text-align: center;
+    font-size: larger;
+    border-radius: 20px;
+}
+.mario {
+    position: absolute;
+    top: -40px;
+    left: 0px;
+    height: 200px;
+    /* animation: spin 5s ease-in infinite; */
+}
+.jump {
+    animation: jump .5s ease-in 1;
+}
+.drive {
+    animation: drive 5s ease-in infinite;
+}
+.spin {
+    animation: spin 1s ease-in infinite;
+}
+.shake {
+    animation: shake 1.5s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+.wave {
+    animation: wave 4s infinite alternate-reverse;
+}
+
+@keyframes drive {
+    0%{
+        margin-left: 0%;
+    }
+    25%{
+        margin-left: 25%;
+    } 
+    50%{
+        margin-left: 50%;
+    }
+    100%{
+        margin-left: 100%;
+    }
+}
+
+
+
+@keyframes jump {
+    0% { 
+     margin-left: 300px;   
+     transform: translate(-50%, -50%); 
+    }
+    50% { 
+    margin-left: 400PX;
+    transform: translate(-50%, -150%); 
+    }
+    100% { 
+   margin-left: 500PX;     
+    transform: translate(-150%, -150%); 
+    }
+}
+
+@keyframes spin {
+    0% {transform:rotate(0deg);}
+    100% {transform:rotate(360deg);}
+}
+
+
+@keyframes shake {
+    10%, 90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+    
+    20%, 80% {
+      transform: translate3d(2px, 0, 0);
+    }
+  
+    30%, 50%, 70% {
+      transform: translate3d(-4px, 0, 0);
+    }
+  
+    40%, 60% {
+      transform: translate3d(4px, 0, 0);
+    }
+  }
+
+@keyframes wave {
+    0% {
+        transform: translate(0px, 10px);
+    }
+    20% {
+        transform: translate(40px, 90px);
+    }
+    40% {
+        transform: translate(80px, 10px);
+    }
+    60% {
+        transform: translate(120px, 90px);
+    }
+    80% {
+        transform: translate(160px, 10px);
+    }
+   100% {
+        transform: translate(200px, 90px);
+    }
+}
